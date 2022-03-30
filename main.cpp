@@ -3,10 +3,11 @@
 int main()
 {
 
-    int result{}, quess{}, num1{}, num2{}, count = 4, choose{};
-    bool option = true;
+    int result{}, quess{}, num1{}, num2{}, count = 4, choose{}, key{};
+    bool option = true, operand = true;
     std::string text;
     Random randonmumber;
+    while (operand){
     choose = menu();
     switch (choose)
     {
@@ -41,23 +42,25 @@ int main()
                 std::cout << "Sorry, you are out of quesses, better luck next time!\n";
             }
         }
-        std::cout << "Thank you for using this app!\n";
         break;
     case 2:
-        int key{};
-        std::cout << "Enter your text to be encrypted:";
+        std::cout << "Enter your text to be encrypted:\n"
+                  <<  "Do not use spaces!\n";
         std::cin >> text;
-        std::cout << "Enter key for encryption:";
+        std::cout << "Enter key for encryption:\n";
         std::cin >> key;
         text = caesar_encrypt(text, key);
-        std::cout << "Encrypted text is: " << text << std::endl;
+        std::cout << "Encrypted text is: " << text << std::endl << std::endl;
         break;
     case 3:
         std::cout << "Ending program\n";
-
+        std::cout << "Thank you for using this app!\n";
+        operand = false;
+        break;
     default:
         std::cout << "Wrong input\n";
         break;
-
+    }
+    }
     return 0;
 }

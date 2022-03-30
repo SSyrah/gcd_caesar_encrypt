@@ -8,9 +8,11 @@ int menu()
     int option{};
     bool operand = true;
     std::cout << "Welcome! \n"
-              << "You have to options: 1 = Try to guess greatest common divisor.\n"
+              << "You have three options:\n"
+              << "1 = Try to guess greatest common divisor.\n"
               << "2 = Encrypt message using Ceasar's algorhytm\n"
-              << "Your choise (1 / 2):";
+              << "3 = End program\n"
+              << "Your choise (1 / 2 / 3):\n";
     std::cin >> option;
     while (operand)
     {
@@ -25,6 +27,7 @@ int menu()
             operand = false;
         }
     }
+    return option;
 }
 
 int check_option()
